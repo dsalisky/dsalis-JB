@@ -5,38 +5,16 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: animalApp
+      app: hare
   replicas: 2
   template: 
     metadata:
       labels:
-        app: animalApp
+        app: hare
     spec:
       containers:
       - name: hare
         image: supergiantkir/animals:hare
-        ports:
-        - containerPort: 80
-       
----
-
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: bear-stateful-test
-spec:
-  selector:
-    matchLabels:
-      app: animalApp
-  replicas: 2
-  template: 
-    metadata:
-      labels:
-        app: animalApp
-    spec:
-      containers:
-      - name: bear
-        image: supergiantkir/animals:bear
         ports:
         - containerPort: 80
        
@@ -48,7 +26,7 @@ metadata:
   name: animal-service
 spec:
   selector:
-    app: animalApp 
+    app: hare 
   ports: 
   - name: myport 
     protocol: TCP
