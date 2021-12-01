@@ -32,7 +32,7 @@ spec:
   template: 
     metadata:
       labels:
-        app: animalapp
+        app: bear
     spec:
       containers:
       - name: bear
