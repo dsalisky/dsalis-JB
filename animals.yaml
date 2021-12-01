@@ -10,7 +10,7 @@ spec:
   template: 
     metadata:
       labels:
-        app: animal-app
+        app: animalApp
     spec:
       containers:
       - name: hare
@@ -32,7 +32,7 @@ spec:
   template: 
     metadata:
       labels:
-        app: animal-app
+        app: animalApp
     spec:
       containers:
       - name: bear
@@ -48,7 +48,7 @@ metadata:
   name: animal-service
 spec:
   selector:
-    app: animal-app 
+    app: animalApp 
   ports: 
   - name: myport 
     protocol: TCP
