@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: hare
+      app: animal-app
   replicas: 2
   template: 
     metadata:
       labels:
-        app: animalapp
+        app: hare
     spec:
       containers:
       - name: hare
@@ -27,7 +27,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: hare
+      app: animal-app
   replicas: 2
   template: 
     metadata:
@@ -48,7 +48,7 @@ metadata:
   name: animal-service
 spec:
   selector:
-    app: animalapp 
+    app: animal-app 
   ports: 
   - name: myport 
     protocol: TCP
