@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hare-deployment-test
+spec:
+  selector:
+    matchLabels:
+      app: hare
+  replicas: 2
+  template: 
+    metadata:
+      labels:
+        app: animalapp
+    spec:
+      containers:
+      - name: hare
+        image: supergiantkir/animals:hare
+        ports:
+        - containerPort: 80
+       
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bear-deployment-test
+spec:
+  selector:
+    matchLabels:
+      app: hare
+  replicas: 2
+  template: 
+    metadata:
+      labels:
+        app: animalapp
+    spec:
+      containers:
+      - name: bear
+        image: supergiantkir/animals:bear
+        ports:
+        - containerPort: 80
+       
+---
+
+kind: Service      
+apiVersion: v1     
+metadata:
+  name: animal-service
+spec:
+  selector:
+    app: animalapp 
+  ports: 
+  - name: myport 
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
